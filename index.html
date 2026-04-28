@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PBC IMRI™ Assessment Platform</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="hero">
+        <p class="eyebrow">PBC IMRI™ Assessment Platform</p>
+        <h1>Insurance Market Readiness Assessment – Recapitalization Diagnostic</h1>
+        <p class="subtext">
+          Evaluate market readiness with an executive diagnostic and action-focused recommendations.
+        </p>
+      </header>
+
+      <section class="card" id="assessment-card">
+        <h2>Assessment Form</h2>
+        <form id="assessment-form" novalidate>
+          <div class="field-grid">
+            <label class="field">
+              <span>Company Name</span>
+              <input type="text" id="companyName" name="companyName" required />
+            </label>
+            <label class="field">
+              <span>Email</span>
+              <input type="email" id="email" name="email" required />
+            </label>
+          </div>
+
+          <div class="ratings">
+            <h3>Rate each area (1 = Low, 5 = High)</h3>
+
+            <label class="field">
+              <span>Capital Strength</span>
+              <input type="number" name="capital" min="1" max="5" required />
+            </label>
+            <label class="field">
+              <span>Governance &amp; Leadership</span>
+              <input type="number" name="governance" min="1" max="5" required />
+            </label>
+            <label class="field">
+              <span>Operational Efficiency</span>
+              <input type="number" name="operations" min="1" max="5" required />
+            </label>
+            <label class="field">
+              <span>Technology Capacity</span>
+              <input type="number" name="technology" min="1" max="5" required />
+            </label>
+            <label class="field">
+              <span>Product Innovation</span>
+              <input type="number" name="product" min="1" max="5" required />
+            </label>
+            <label class="field">
+              <span>Brand Equity</span>
+              <input type="number" name="brand" min="1" max="5" required />
+            </label>
+            <label class="field">
+              <span>Distribution Strength</span>
+              <input type="number" name="distribution" min="1" max="5" required />
+            </label>
+            <label class="field">
+              <span>Regulatory Readiness</span>
+              <input type="number" name="regulatory" min="1" max="5" required />
+            </label>
+          </div>
+
+          <p class="error" id="form-error" aria-live="polite"></p>
+          <button type="submit" class="primary-btn">Generate Results</button>
+        </form>
+      </section>
+
+      <section class="card hidden" id="results-card" aria-live="polite">
+        <h2>Results Page</h2>
+        <p class="result-meta" id="result-company"></p>
+
+        <div class="result-grid">
+          <article>
+            <h3>Readiness Score</h3>
+            <p id="readiness-score" class="result-value">-</p>
+          </article>
+          <article>
+            <h3>Readiness Level</h3>
+            <p id="readiness-level" class="result-value">-</p>
+          </article>
+          <article>
+            <h3>Weak Areas</h3>
+            <ul id="weak-areas"></ul>
+          </article>
+          <article>
+            <h3>PBC Recommendations</h3>
+            <ul id="recommendations"></ul>
+          </article>
+        </div>
+
+        <button type="button" class="secondary-btn" id="book-session">Book Strategy Session</button>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
